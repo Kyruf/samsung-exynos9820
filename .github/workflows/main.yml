@@ -55,7 +55,7 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                    \
                        model=${{ matrix.model }} \
-                       name="Cruel-devel"        \
+                       name="Cruel-kyruf"        \
                        toolchain=$TOOLCHAIN      \
                        +magisk                   \
                        +nohardening              \
@@ -67,6 +67,9 @@ jobs:
                        +force_dex_wqhd           \
                        +morosound                \
                        +boeffla_wl_blocker       \
+                       +always_permit            \
+                       +usb_serial               \
+                       +mass_storage             \
           2>&1 | tee config.info
 
       - name: Install gcc-aarch64-linux-gnu
